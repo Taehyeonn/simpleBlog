@@ -1,5 +1,6 @@
 package com.example.simpleBlog.board.domain;
 
+import com.example.simpleBlog.member.domain.Member;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -19,4 +20,8 @@ public class Board {
 
     @Column(nullable = false, length = 30)
     private String content;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 }
