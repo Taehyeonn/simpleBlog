@@ -23,5 +23,13 @@ spring:
         dialect: org.hibernate.dialect.H2Dialect
         format_sql: true      # 쿼리 로그 포맷 (정렬)
         show_sql: true        # 쿼리 로그 출력
+
+  # 타임리프 설정
+  thymeleaf:
+    enabled: true
+    cache: false # cache 사용 /사용 시 컴파일한 파일만 사용 (개발 시 미사용)
+    prefix: classpath:/templates/ # 템플릿 위치 / View 파일 위치
+    suffix: .html # View 파일 기본 확장자 / Controller에서 확장자를 입력하지 않아도 된다.
+
 server:
   port: 8081
